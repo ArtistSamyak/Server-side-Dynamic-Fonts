@@ -13,6 +13,7 @@
 		E35DA97B27EE16A400E4138D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35DA97927EE16A400E4138D /* Main.storyboard */; };
 		E35DA97D27EE16A700E4138D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E35DA97C27EE16A700E4138D /* Assets.xcassets */; };
 		E35DA98027EE16A700E4138D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35DA97E27EE16A700E4138D /* LaunchScreen.storyboard */; };
+		E35DA98827EE1AAA00E4138D /* FileDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35DA98727EE1AAA00E4138D /* FileDownloader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E35DA97C27EE16A700E4138D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E35DA97F27EE16A700E4138D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E35DA98127EE16A700E4138D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E35DA98727EE1AAA00E4138D /* FileDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				E35DA97327EE16A400E4138D /* AppDelegate.swift */,
 				E35DA97527EE16A400E4138D /* SceneDelegate.swift */,
 				E35DA97727EE16A400E4138D /* ViewController.swift */,
+				E35DA98727EE1AAA00E4138D /* FileDownloader.swift */,
 				E35DA97927EE16A400E4138D /* Main.storyboard */,
 				E35DA97C27EE16A700E4138D /* Assets.xcassets */,
 				E35DA97E27EE16A700E4138D /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				E35DA97827EE16A400E4138D /* ViewController.swift in Sources */,
 				E35DA97427EE16A400E4138D /* AppDelegate.swift in Sources */,
+				E35DA98827EE1AAA00E4138D /* FileDownloader.swift in Sources */,
 				E35DA97627EE16A400E4138D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
