@@ -14,15 +14,31 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let fontURL = URL(string: "http://fonts.gstatic.com/s/alumnisans/v9/nwpHtKqkOwdO2aOIwhWudEWpx_zq_Xna-Xd95uhQqFsJ3C8qng.ttf")
-        FileDownloader.loadFileAsync(url: fontURL!) { (path, error) in
-            print("Font .ttf File downloaded to : \(path!)")
-            let font = self.getFont(path: path!)
-            self.displayLabel.font = font
-        }
     }
     
-    private func getFont(path: String) -> UIFont? {
+    override func viewWillAppear(_ animated: Bool) {
+        setCustomFont(of: 20)
+        super.viewWillAppear(animated)
+    }
+    
+    private func setCustomFont(of size: CGFloat) {
+        URLSession.shared.dataTask(with: URL(string: "https://artistsamyak.github.io/CSS-MySite/CustomFont.json")!) { data, response, error in
+            
+            let decoder = JSONDecoder()
+            let fontUrlString = try! decoder.decode(String.self, from: data!)
+            print(fontUrlString)
+            FileDownloader.loadFileAsync(url: URL(string: fontUrlString)!) { (path, error) in
+                print("Font .ttf File downloaded to : \(path!)")
+                let font = self.getFont(path: path!, size: size)
+                DispatchQueue.main.async {
+                    self.displayLabel.font = font
+                }
+            }
+            
+        }.resume()
+    }
+    
+    private func getFont(path: String, size: CGFloat) -> UIFont? {
         
         guard let fontFile = NSData(contentsOfFile: path)
         else {
@@ -53,7 +69,7 @@ class ViewController: UIViewController {
         
         let fontName = String(font.fullName!)
         
-        return UIFont(name: fontName, size: 20)
+        return UIFont(name: fontName, size: size)
     }
     
 
