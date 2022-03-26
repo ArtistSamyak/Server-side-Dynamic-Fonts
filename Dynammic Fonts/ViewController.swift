@@ -23,7 +23,13 @@ class ViewController: UIViewController {
     }
     
     private func setCustomFont(of size: CGFloat) {
-        URLSession.shared.dataTask(with: URL(string: "https://artistsamyak.github.io/CSS-MySite/CustomFont.json")!) { data, response, error in
+        let config = URLSessionConfiguration.default
+        config.requestCachePolicy = .reloadIgnoringLocalCacheData
+        config.urlCache = nil
+
+        let session = URLSession(configuration: config)
+        
+        session.dataTask(with: URL(string: "https://artistsamyak.github.io/CSS-MySite/CustomFont.json")!) { data, response, error in
             
             let decoder = JSONDecoder()
             let fontUrlString = try! decoder.decode(String.self, from: data!)
