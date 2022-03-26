@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        displayLabel.isHidden = true
         setCustomFont(of: 20)
         super.viewWillAppear(animated)
     }
@@ -32,6 +33,7 @@ class ViewController: UIViewController {
                 let font = self.getFont(path: path!, size: size)
                 DispatchQueue.main.async {
                     self.displayLabel.font = font
+                    self.displayLabel.isHidden = false
                 }
             }
             
